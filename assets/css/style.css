@@ -170,12 +170,24 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 30px;
   margin-right: 15px;
   border-radius: 50px;
-  color: #111235;
+  color: #111235 !important;
 }
 .navbar .getstarted:hover, .navbar .getstarted:focus:hover {
-  color: #fff;
-  background: #00b383;
+  color: #111235;
+  background: #FEDB99;
+  font-weight: bold;
 }
+
+.navbar .getstarted:active, .navbar .getstarted:focus:active{
+  background: #FFA600;
+  color: #111235;
+  border: 2px solid #FEDB99;
+}
+
+.navbar-mobile .getstarted{
+  justify-content: center ;
+}
+
 .navbar .dropdown ul {
   display: block;
   position: absolute;
@@ -274,17 +286,17 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 15px;
   left: 15px;
   padding: 10px 0;
-  background-color: #fff;
+  background-color: #111235;
   overflow-y: auto;
   transition: 0.3s;
 }
 .navbar-mobile a, .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
-  color: #36343a;
+  color: #FFF;
 }
 .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
-  color: #009970;
+  color: #FFA600;
 }
 .navbar-mobile .getstarted, .navbar-mobile .getstarted:focus {
   margin: 15px;
@@ -331,44 +343,50 @@ h1, h2, h3, h4, h5, h6 {
   background: #111235;
 }
 #hero h1 {
+  margin: 10px 0px 10px 0px;
+  font-size: 3.125rem;
+  font-weight: bold;
+  line-height: 4.063rem;
+  color: rgb(255, 255, 255);
+  text-align: left;
+  /*
   margin: 0 0 10px 0;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 56px;
+  font-size: 3.125rem;
+  font-weight: bold;
+  line-height: 4.063rem;
   color: #ffff;
+  text-align: left;*/
 }
 #hero h2 {
   color: #ffff;
   margin-bottom: 40px;
-  font-size: 16px;
-  font-weight: 400;
-  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: normal;
   letter-spacing: 0.5px;
-  line-height: 1.5rem;
+  line-height: 2.25rem;
   text-align: left;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 #hero .btn-get-started {
-  font-family: "Poppins", sans-serif;
   text-transform: none;
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 1px;
+  font-weight: normal;
+  font-size: 1.5rem;
   display: inline-block;
-  padding: 8px 28px;
+  padding: 16px 64px;
   border-radius: 50px;
   transition: 0.5s;
-  margin: 10px;
   color: #111235;
   background: #FFA600;
+  line-height: 2.25rem;
 }
 #hero .btn-get-started:hover {
-  background: #FFA600;
-  border: 2px solid #FFA600;
-  color: #111235
+  background: #FEDB99;
+  font-weight: bold;
 }
-
+#hero .btn-get-started:active {
+  background: #FFA600;
+  color: #111235;
+  border: 2px solid #FEDB99;
+}
 #hero .img-hero{
   padding-block: inherit;
 }
@@ -393,6 +411,73 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 0.5rem;
   }
 }
+
+@media (max-width: 1199px) {
+  #hero h1 {
+    margin: 10px 0px 10px 0px;
+    font-size: 2.125rem;
+    font-weight: bold;
+    line-height: 2.5rem;
+    color: rgb(255, 255, 255);
+    text-align: left;
+  }
+  #hero h2 {
+    color: #ffff;
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    line-height: 2.1rem;
+    text-align: left;
+  }
+  #hero .btn-get-started{
+    text-transform: none;
+    font-weight: normal;
+    font-size: 1.2rem;
+    display: inline-block;
+    padding: 15px 64px;
+    border-radius: 50px;
+    transition: 0.5s;
+    color: #111235;
+    background: #FFA600;
+    line-height: 1.25rem;
+  }
+}
+@media (max-width: 991px){
+  #hero h1{
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+  }
+  #hero h2{
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+  }
+  #hero .btn-get-started {
+    margin-bottom: 1.8rem;
+  }
+}
+@media (max-width:768px){
+  #hero h1{
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  #hero h2{
+    font-size: 1rem;
+    line-height: 1.2rem;
+    padding-left: 30px;
+    
+  }
+  #hero .btn-get-started {
+    margin-bottom: 1.8rem;
+    font-size: 1rem;
+    padding: 11px 52px;
+    line-height: 1.25rem;
+  }
+}
+
+
+
+
 
 /*--------------------------------------------------------------
 # Sections General
@@ -454,17 +539,27 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
-.about{
-  padding-top: 0;
+#about .section{
   padding-bottom: 0;
-  background-image: url(../img/ezcomerce/beneficios_background_mobile.svg);
-  background-size: auto;
-  background-repeat: repeat;
+}
+.about .container{
+  background-color: #242C93;
   color: #ffffff;
 }
+.about .content{
+  padding-top: 3rem;
+}
+.textura-container{
+  position: relative;
+  margin: 0 0 0 auto;
 
+}
+.textura-beneficios{
+  position: absolute;
+  height: auto;
+  width: 100%;
+}
 .about .content h2 {
-  margin-top: 5rem;
   font-weight: 700;
   font-size: 2.188rem;
   line-height: 2.188rem;
@@ -495,14 +590,12 @@ section {
 .about .content p:last-child {
   margin-bottom: 0;
 }
-
 .benefits-list-subtitle{
   font-style: normal;
   font-weight: bold;
   font-size: 1rem;
   line-height: 1.125rem;
 }
-
 .button-ser-vendedor{
   background: #FFA600;
   border-radius: 50px;
@@ -516,9 +609,41 @@ section {
   padding-right: 5rem;
   margin-bottom: 2rem;
 }
-
 .button-ser-vendedor:hover{
-  transform: scale(1.1);
+  background: #FEDB99;
+  font-weight: bold;
+}
+.button-ser-vendedor:active{
+  background: rgb(255, 166, 0);
+  color: rgb(17, 18, 53);
+  border: 2px solid rgb(254, 219, 153);
+
+}
+@media (max-width: 766px) { 
+  .textura-container{
+    max-width: 6rem;
+  }
+  
+}
+
+@media (min-width: 767px) { 
+  .textura-container{
+    max-width: 14rem;
+  }
+
+}
+
+@media (min-width: 992px) {
+  .textura-container{
+    max-width: 8rem;
+  }
+}
+
+
+@media (min-width: 1200px) { 
+  .textura-container{
+    max-width: 14rem;
+  }
 }
 
 
@@ -552,7 +677,8 @@ section {
 }
 
 .img-why-us{
-  padding: 0;
+  width:50%; /* you can use % */
+  height: auto;
 }
 
 .why-us .content {
@@ -564,20 +690,34 @@ section {
   overflow: hidden;
 }
 .why-us .content h3 {
-  font-weight: normal;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  padding-top: 3rem;
-  padding-bottom: 0;
+  font-weight: 400;
+  font-size: 1.875rem;
+  line-height: 1.063;
   margin-bottom: 0;
 }
 .why-us .content p {
-  margin-bottom: 30px;
   font-style: normal;
   font-weight: bold;
-  font-size: 1.875rem;
-  line-height: 1rem;
-  padding-top: 0.5rem;
+  font-size: 5.563rem;
+}
+
+@media (max-width: 992px){
+  .why-us .content h3{
+    font-size: 1.5rem;
+  }
+  .why-us .content p{
+    font-size: 2.5rem;
+
+  }
+}
+@media (max-width: 500px){
+  .why-us .content h3{
+    font-size: 1.125rem;
+  }
+  .why-us .content p{
+    font-size: 1.875rem;
+
+  }
 }
 .why-us .content .more-btn {
   display: inline-block;
@@ -990,8 +1130,8 @@ section {
 .team-subtitle{
   font-style: normal;
   font-weight: normal;
-  font-size: 1.125rem;
-  line-height: 1.25rem;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
 }
 .team .member {
   position: relative;
@@ -1002,26 +1142,28 @@ section {
 }
 .team .member .pic {
   overflow: hidden;
-  width: 150px;
   border-radius: 50%;
-  margin: auto auto 20px auto;
+  margin: 0 auto 20px auto;
+  justify-content: center;
 }
 .team .member .pic img {
   transition: ease-in-out 0.3s;
+  width: 150px;
+  height: 150px;
 }
 .team .member:hover img {
   transform: scale(1.1);
 }
+.member-info{
+  margin-left: 1rem;
+}
 .team .member h4 {
   font-weight: bold;
-  margin-bottom: 5px;
-  font-size: 1.1rem;
+  font-size: 16px;
   color:#111235;
   font-style: normal;
   line-height: 1.5rem;
   text-align: left;
-  margin-top: 0.5rem;
-  padding-left: 1rem;
 }
 .team .member span {
   display: block;
@@ -1030,7 +1172,6 @@ section {
   font-weight: normal;
   line-height: 1.5rem;
   text-align: left;
-  padding-left: 1rem;
 }
 .team .member span::after {
   content: "";
@@ -1048,7 +1189,6 @@ section {
   color: #111235;
   font-weight: normal;
   text-align: left;
-  padding-left: 1rem;
 }
 .location{
   padding-right: 0.1rem;
@@ -1066,7 +1206,7 @@ section {
 }
 .contactar-wa{
   color: #242C93;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.688rem;
   font-weight: 700;
 }
@@ -1111,6 +1251,8 @@ section {
   font-weight: bold;
   font-size: 1.875rem;
   line-height: 2rem;
+  padding-left: 0.3rem;
+
 }
 .contact-subtitle{
   font-style: normal;
@@ -1118,9 +1260,20 @@ section {
   font-size: 1.125rem;
   line-height: 1.25rem;
   color: #ffffff;
+  padding-left: 0.3rem;
 }
-.contact-header{
-  background-image: url(../img/ezcomerce/contact_background.png);
+#contact .section-title{
+  background-color: #111235;
+}
+.container-textura-contacto{
+  position: relative;
+}
+.textura-contactenos{
+  position: absolute;
+  height: auto;
+  width: 7rem;
+  top: 0px;
+  right: 0px;
 }
 .contact-title::after{
   content: none !important;
@@ -1133,11 +1286,11 @@ section {
 }
 .contact .info i {
   font-size: 20px;
-  color: #fff;
+  color: #111235 ;
   float: left;
   width: 44px;
   height: 44px;
-  background: #009970;
+  background: #FFA600;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1215,7 +1368,7 @@ section {
   padding: 10px 12px;
 }
 .contact .php-email-form button[type=submit] {
-  background: #009970;
+  background: #111235;
   border: 0;
   padding: 10px 30px;
   color: #fff;
@@ -1223,7 +1376,14 @@ section {
   border-radius: 50px;
 }
 .contact .php-email-form button[type=submit]:hover {
-  background: #00805d;
+  background: #777798;
+  font-weight: bold;
+}
+
+.contact .php-email-form button[type=submit]:active{
+  background: #111235;
+  font-weight: bold;
+  border: 2px solid #777798;
 }
 @-webkit-keyframes animate-loading {
   0% {
